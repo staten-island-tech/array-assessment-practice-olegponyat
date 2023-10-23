@@ -86,17 +86,48 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
+books.forEach((fart)=>{
+  console.log(`${fart.authorFirst} ${fart.authorLast} wrote ${fart.name} in ${fart.publishDate}`)
+})
 
 //Sort books from oldest to most recent
 
+console.log(books.sort((a,b)=> a.publishDate - b.publishDate))
+
 //sort books alphabetically
+console.log(titles.sort())
 
 //Find who wrote War and Peace
+books.forEach((farts)=>{
+  if (farts.name === "War and Peace")
+    console.log(farts.authorFirst, farts.authorLast)
+})
 
 //how many books were written before 1900?
-
+const poop= books.filter((fart)=> fart.publishDate < 1900)
+console.log(poop.length)
 //was there at least one book published within the last 100 years?
+const year = 2023
 
+const farted = books.filter((poop)=> poop.publishDate > year-100)
+if (farted.length > 0){
+  console.log(true);
+}
+else{
+  console.log(false)
+}
 //was every book published within the last 100 years?
 
+
+const farteds = books.filter((poop)=> poop.publishDate > year-100)
+if(farted.length > books.length){
+  console.log(true)
+}
+else{
+  console.log(false)
+}
 //print a list of books that "includes" the genre historical
+const fartedss = books.filter((fart)=> 
+  fart.genre.includes('historical')
+)
+console.log(fartedss)
